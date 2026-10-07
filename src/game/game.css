@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bree+Serif&family=DM+Sans:wght@400;500;600;700&display=swap');
 
+.adventure-image>.adventure-level{position:absolute;left:156px;top:23px;display:flex;align-items:center;transform:rotate(5deg);height:17px;pointer-events:none}
+.stone-digit{display:block;width:12px;height:17px;flex-shrink:0;background-image:url('/pvz/original/SelectorScreen_LevelNumbers.png');background-repeat:no-repeat}
+.world-digit{margin-right:10px}.stone-level-digits{display:flex;gap:0}
+
 /* The classic 4:3 game fills the viewport, with letterboxing instead of cropping. */
 html:has(.pvz-page),body:has(.pvz-page){margin:0;overflow:hidden;background:#000}
 main.pvz-page{position:fixed;inset:0;width:100%;height:100dvh;min-height:0;padding:0;background:#000}
