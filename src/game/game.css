@@ -4,6 +4,23 @@
 .stone-digit{display:block;width:12px;height:17px;flex-shrink:0;background-image:url('/pvz/original/SelectorScreen_LevelNumbers.png');background-repeat:no-repeat}
 .world-digit{margin-right:10px}.stone-level-digits{display:flex;gap:0}
 
+/* Share both plaque edges, leaving the vase artwork clear below the stone. */
+.menu-stone-buttons{position:absolute;left:425px;top:50px;width:331px;height:402px;transform:scale(.9);transform-origin:top left}
+.menu-stone-buttons .adventure-image{left:0;top:0;transform:none;padding:0}
+.menu-stone-buttons .adventure-image:hover{transform:none}
+.menu-stone-buttons .mode-image{left:0;width:100%;height:auto;padding:0}
+.menu-stone-buttons img{display:block}
+.menu-stone-buttons .minigames-image{top:133px}
+.menu-stone-buttons .puzzles-image{top:260px}
+
+/* Labels sit on the vase bodies, not on separate rectangular buttons. */
+.main-menu .menu-bottom{inset:0;display:block;pointer-events:none}
+.main-menu .menu-bottom button{position:absolute;display:flex;align-items:center;justify-content:center;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none;color:#373a2b;font:bold 16px Georgia,serif;text-shadow:none;pointer-events:auto}
+.main-menu .menu-bottom button:hover{color:#6b391a}
+.menu-bottom .vase-options{left:558px;top:477px;width:90px;height:48px}
+.menu-bottom .vase-help{left:640px;top:504px;width:62px;height:40px}
+.main-menu .menu-bottom .vase-more{left:707px;top:488px;width:74px;height:55px;font-size:11px;line-height:1.2}
+
 /* The classic 4:3 game fills the viewport, with letterboxing instead of cropping. */
 html:has(.pvz-page),body:has(.pvz-page){margin:0;overflow:hidden;background:#000}
 main.pvz-page{position:fixed;inset:0;width:100%;height:100dvh;min-height:0;padding:0;background:#000}

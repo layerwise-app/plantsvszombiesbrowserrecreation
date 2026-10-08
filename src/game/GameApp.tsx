@@ -135,11 +135,17 @@ export function GameApp() {
           {screen === 'menu' && <div className="main-menu">
             <img className="main-logo" src="/pvz/original/logo.png" alt="Plants vs. Zombies" />
             <div className="welcome-sign"><span>WELCOME BACK,</span><strong>Neighbor!</strong><button onClick={() => setModal('help')}>Ready to defend your lawn?</button></div>
-            <button className="adventure-image" aria-label="Start Adventure" onClick={() => choose()}><img src={`/pvz/original/${furthest > 1 ? 'SelectorScreen_Adventure_button' : 'SelectorScreen_StartAdventure_Button1'}.png`} alt="Adventure" />{furthest > 1 && <span className="adventure-level" aria-label={`Level 1-${level}`}><span className="stone-digit world-digit" aria-hidden="true" style={{ backgroundPositionX: '-12px' }} /><span className="stone-level-digits" aria-hidden="true">{String(level).split('').map((digit, index) => <span key={index} className="stone-digit" style={{ backgroundPositionX: `${-Number(digit) * 12}px` }} />)}</span></span>}</button>
-            <button className="mode-image minigames-image" onClick={() => setModal('locked')} aria-label="Puzzles"><img src="/pvz/original/SelectorScreen_Challenges_button.png" alt="Puzzles" /></button>
-            <button className="mode-image survival-image" onClick={() => setModal('locked')} aria-label="Mini-games"><img src="/pvz/original/SelectorScreen_Survival_button.png" alt="Mini-games" /></button>
+            <div className="menu-stone-buttons">
+              <button className="adventure-image" aria-label="Start Adventure" onClick={() => choose()}><img src={`/pvz/original/${furthest > 1 ? 'SelectorScreen_Adventure_button' : 'SelectorScreen_StartAdventure_Button1'}.png`} alt="Adventure" />{furthest > 1 && <span className="adventure-level" aria-label={`Level 1-${level}`}><span className="stone-digit world-digit" aria-hidden="true" style={{ backgroundPositionX: '-12px' }} /><span className="stone-level-digits" aria-hidden="true">{String(level).split('').map((digit, index) => <span key={index} className="stone-digit" style={{ backgroundPositionX: `${-Number(digit) * 12}px` }} />)}</span></span>}</button>
+              <button className="mode-image minigames-image" onClick={() => setModal('locked')} aria-label="Mini-games"><img src="/pvz/original/SelectorScreen_Survival_button.png" alt="Mini-games" /></button>
+              <button className="mode-image puzzles-image" onClick={() => setModal('locked')} aria-label="Puzzles"><img src="/pvz/original/SelectorScreen_Challenges_button.png" alt="Puzzles" /></button>
+            </div>
             <button className="almanac-book" onClick={() => setScreen('almanac')}><img src="/pvz/reference/graphics/Plants/SunFlower/SunFlower_0.png" alt="" /><span>ALMANAC</span></button>
-            <div className="menu-bottom"><button onClick={() => setModal('options')}>OPTIONS</button><button onClick={() => setModal('help')}>HELP</button><button onClick={() => setModal('locked')}>MORE WAYS TO PLAY</button></div>
+            <div className="menu-bottom">
+              <button className="vase-options" onClick={() => setModal('options')}>OPTIONS</button>
+              <button className="vase-help" onClick={() => setModal('help')}>HELP</button>
+              <button className="vase-more" aria-label="More ways to play" onClick={() => setModal('locked')}><span>MORE<br />WAYS<br />TO PLAY</span></button>
+            </div>
             <span className="menu-version">A little sunshine. A lot of zombies.</span>
           </div>}
           {screen === 'choose' && <div className="choose-scene">
